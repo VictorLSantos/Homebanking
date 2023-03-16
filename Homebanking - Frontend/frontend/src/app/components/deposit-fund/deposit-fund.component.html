@@ -1,0 +1,57 @@
+<section class="deposit_section">
+  <div class="content_form_deposit">
+    <h2>Register your deposit</h2>
+    <div *ngIf="sucessMsg" class="alert alert-success" role="alert">
+      {{ sucessMsg }}
+    </div>
+    <form
+      class="form_deposit"
+      [formGroup]="formDeposit"
+      (ngSubmit)="addSubmit()"
+      #formDir="ngForm"
+    >
+      <mat-form-field
+        appearance="fill"
+        [floatLabel]="getFloatLabelValue()"
+        class="description_field"
+      >
+        <mat-label>Description of the deposit</mat-label>
+        <input
+          class="description_deposit"
+          matInput
+          id="description_deposit"
+          type="text"
+          name="description_deposit"
+          placeholder="Description of the deposit"
+          formControlName="name_fund"
+        />
+        <mat-error *ngIf="name_fund.errors?.['required'] && name_fund.touched">
+          Name of fund is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        floatLabel="always"
+        class="amount_field"
+      >
+        <mat-label>Amount</mat-label>
+        <input
+          matInput
+          id="amount_control"
+          name="amount_control"
+          formControlName="deposit"
+          class="example-right-align"
+          placeholder="0"
+        />
+        <mat-error
+          *ngIf="amount_fund.errors?.['required'] && amount_fund.touched"
+        >
+          Amount is required
+        </mat-error>
+        <span class="euro" matTextPrefix></span>
+      </mat-form-field>
+
+      <button type="submit">Register deposit</button>
+    </form>
+  </div>
+</section>

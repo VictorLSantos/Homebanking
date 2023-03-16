@@ -1,0 +1,76 @@
+.section_movements_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+.content_list {
+  width: 850px;
+  max-width: 100%;
+  max-height: 500px;
+  font-size: 16px;
+  display: flex;
+  overflow: auto;
+  box-shadow: 2px -3px 3px #0f2027;
+  margin: 0em 0.5em;
+}
+
+/* Scroll */
+
+.content_list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #0f2027;
+}
+
+.content_list::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+.content_list::-webkit-scrollbar-thumb {
+  background-color: #0f2027;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.7) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.7) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+/*  */
+
+.content_list table {
+  width: 100%;
+  text-align: center;
+  background-color: #0f2027;
+  text-align: center;
+}
+
+.title_table {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.title_table_amount {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: fff;
+  text-align: center;
+}
+
+.content_table_amout {
+  text-align: center;
+}
+
+.content_table {
+  color: #fff;
+}

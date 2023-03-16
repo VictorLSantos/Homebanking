@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <section class="section_main_login">
+      <div class="content_form">
+        <h2>LOGIN</h2>
+        <form
+          class="form_login"
+          (ngSubmit)="postdata(formLogin)"
+          [formGroup]="formLogin"
+          #formDir="ngForm"
+        >
+          <!-- Email -->
+          <mat-form-field
+            class="email_field"
+            floatLabel="auto"
+            hideRequiredMarker
+          >
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              name="email"
+              id="email_id"
+              formControlName="email"
+              required
+              autocomplete="off"
+            />
+            <mat-error *ngIf="email.errors?.['required'] && email.touched">
+              Email is required
+            </mat-error>
+            <mat-error *ngIf="email.errors?.['email'] && email.touched">
+              Email Invalid
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Password -->
+          <mat-form-field
+            class="password_field"
+            floatLabel="auto"
+            hideRequiredMarker
+          >
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              type="password"
+              name="password"
+              id="password_id"
+              formControlName="password"
+              required
+              autocomplete="off"
+            />
+            <mat-error
+              *ngIf="password.errors?.['required'] && password.touched"
+            >
+              Password is required
+            </mat-error>
+          </mat-form-field>
+
+          <button class="submit_login" type="submit">Login</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

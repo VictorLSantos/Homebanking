@@ -1,0 +1,61 @@
+<section class="section_movements_list mat-elevation-z8">
+  <div class="content_list">
+    <!-- <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Description of Fund</th>
+            <th>Amount of Fund</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let us of listData">
+            <th>{{ us.id }}</th>
+            <td>{{ us.name_fund }}</td>
+            <td>€{{ us.amount_fund }}</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="name_fund">
+        <th mat-header-cell *matHeaderCellDef class="title_table">
+          Name of Fund
+        </th>
+        <td mat-cell *matCellDef="let element" class="content_table">
+          {{ element.name_fund }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount_fund">
+        <th mat-header-cell *matHeaderCellDef class="title_table_amount">
+          Amout of Fund
+        </th>
+        <td mat-cell *matCellDef="let element" class="content_table_amount">
+          {{ element.deposit }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="title_table_delete">
+          Remove fund
+        </th>
+        <td mat-cell *matCellDef="let element" class="content_table_amount">
+          <button
+            class="btn_delete"
+            mat-flat-button
+            color="warn"
+            aria-label="Example icon button with a delete icon"
+            (click)="removefund(element.id)"
+          >
+            Remove
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</section>

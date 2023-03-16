@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homebanking</title>
+  </head>
+  <body>
+    <!-- <nav class="navigation_menu">
+      <div class="content_navigation">
+        <ul>
+          <li class="links_menu">
+            <a routerLink="movement_list"
+              ><i class="fa-solid fa-list"></i> <br />
+              Movement List</a
+            >
+          </li>
+          <li class="links_menu">
+            <a routerLink="deposit_fund"
+              ><i class="fa-solid fa-sack-dollar"></i><br />
+              Deposit</a
+            >
+          </li>
+          <li class="links_menu">
+            <a routerLink="remove_fund"
+              ><i class="fa-solid fa-sack-xmark"></i><br />
+              Withdraw</a
+            >
+          </li>
+        </ul>
+        <div class="content_login">
+          <li class="links_menu" id="login">
+            <i class="fa-solid fa-user"> <a routerLink="login">Login</a></i>
+          </li>
+
+        </div>
+      </div>
+    </nav> -->
+
+    <mat-toolbar class="custom-toolbar">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        Homebanking
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav opened="true" mode="side" class="custom-sidebar">
+        <mat-nav-list class="content_navigation">
+          <ul>
+            <li class="links_menu">
+              <a routerLink="movement_list"
+                ><i class="fa-solid fa-list"></i> <br />
+                Movement List</a
+              >
+            </li>
+            <li class="links_menu">
+              <a routerLink="deposit_fund"
+                ><i class="fa-solid fa-sack-dollar"></i><br />
+                Deposit fund</a
+              >
+            </li>
+            <li class="links_menu">
+              <a routerLink="remove_fund"
+                ><i class="fa-solid fa-sack-xmark"></i><br />
+                Remove fund</a
+              >
+            </li>
+            <li class="links_menu">
+              <a routerLink="login"><i class="fa-solid fa-user"> </i> Login</a>
+            </li>
+          </ul>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div style="height: 100vh">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </body>
+</html>
